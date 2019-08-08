@@ -13,43 +13,42 @@ public class JpahibernateApplication {
             .createEntityManagerFactory("JavaHelps");
 	public static void main(String[] args) {
 
-                create(6, "Alice"); 
-                create(7, "Bob"); 
-                create(8, "Charlie");
+                create(1, "Mon"); 
+                create(2, "Noil"); 
+                create(3, "Charlie");
                 ENTITY_MANAGER_FACTORY.close();
 	}
         
          public static void create(int id, String name) {
-        // Create an EntityManager
+       
         EntityManager manager = ENTITY_MANAGER_FACTORY.createEntityManager();
         EntityTransaction transaction = null;
 
         try {
-            // Get a transaction
+            
             transaction = manager.getTransaction();
-            // Begin the transaction
+           
             transaction.begin();
 
-            // Create a new Student object
+            
             Helloworld stu = new Helloworld();
             stu.setId(id);
             stu.setMessage(name);
             
 
-            // Save the student object
+            
             manager.persist(stu);
 
-            // Commit the transaction
+            
             transaction.commit();
         } catch (Exception ex) {
-            // If there are any exceptions, roll back the changes
+           
             if (transaction != null) {
                 transaction.rollback();
             }
-            // Print the Exception
            
         } finally {
-            // Close the EntityManager
+          
             manager.close();
         }
     }
