@@ -1,7 +1,6 @@
 package com.mycompany.onetoonedemo;
 
-import java.io.Serializable;
-import java.math.BigInteger;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -10,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import org.hibernate.validator.constraints.Email;
+
 
 /**
  *
@@ -40,6 +41,7 @@ public class Student {
     @Column(name = "phone")
     private int phone;
     @Column(name = "email")
+    @Email
     private String email;
     @OneToOne(cascade=CascadeType.ALL)
     
