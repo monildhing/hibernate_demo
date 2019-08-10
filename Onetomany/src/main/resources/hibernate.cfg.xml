@@ -8,6 +8,6 @@
     <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/onetomany</property>
     <property name="hibernate.connection.username">postgres</property>
     <property name="hibernate.connection.password">argusadmin</property>
-    <property name="hbm2ddl.auto">create</property>
+    <property name="hbm2ddl.auto">update</property>
   </session-factory>
 </hibernate-configuration>
